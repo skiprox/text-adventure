@@ -1,18 +1,29 @@
 class Emdash {
 	int incrementer;
+	boolean showCutScenes;
 	String previousLocation = "suckit";
 	Emdash(String previousStoryLine) {
 		previousLocation = previousStoryLine;
 		incrementer = 0;
-	}
-	void draw() {
-
+		showCutScenes = true;
 	}
 	// Basically the draw function
 	void update() {
-		background(198, 109, 255);
-		fill(255, 198, 90);
-		ellipse(100, 100, 50, 50);
+		textSize(80);
+		textAlign(CENTER, CENTER);
+		fill(0);
+		switch (incrementer) {
+			case 0:
+				background(255, 109, 198);
+				text("Third screen goes here, part of intro class", 0, 0, width, height);
+				instructionText();
+				break;
+			case 1:
+				background(109, 255, 198);
+				text("Fourth screen goes here, part of intro class", 0, 0, width, height);
+				instructionText();
+				break;
+		}
 	}
 	// Check if this story line is complete
 	boolean isComplete() {
@@ -27,8 +38,17 @@ class Emdash {
 				return "intro";
 		}
 	}
-	void keyReleased() {
+	void keyReleased(int codedKey) {
 		println("Some key pressed");
 		incrementer++;
+	}
+	// Show the correct instruction text at the bottom of the screen
+	void instructionText() {
+		if (showCutScenes) {
+			textSize(20);
+			textAlign(CENTER, BOTTOM);
+			fill(0);
+			text("(press space to continue)", 0, 0, width, height);
+		}
 	}
 }

@@ -41,10 +41,10 @@ void draw() {
 void keyReleased() {
 	switch (storyLine) {
 		case "intro":
-			intro.keyReleased();
+			intro.keyReleased(keyCode);
 			break;
 		case "emdash":
-			emdash.keyReleased();
+			emdash.keyReleased(keyCode);
 			break;
 		case "end":
 			break;
