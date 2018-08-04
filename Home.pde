@@ -45,7 +45,7 @@ class Home {
 	}
 	// Return the story line we should continue on next
 	String getNextStoryLine() {
-		return "end";
+		return nextScene;
 	}
 	// The key released listener
 	void keyReleased(int codedKey) {
