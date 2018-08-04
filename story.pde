@@ -1,23 +1,23 @@
 int level = 0;
 String previousStoryLine;
 String storyLine = "intro";
-Intro introduction;
+Intro intro;
 Emdash emdash;
 
 void setup() {
 	size(800, 800);
-	introduction = new Intro();
+	intro = new Intro();
 	background(255);
 }
 
 void draw() {
-	switch(storyLine) {
+	switch (storyLine) {
 		case "intro":
-			if (!introduction.isComplete()) {
-				introduction.update();
+			if (!intro.isComplete()) {
+				intro.update();
 			} else {
 				previousStoryLine = "intro";
-				storyLine = introduction.getNextStoryLine();
+				storyLine = intro.getNextStoryLine();
 				emdash = new Emdash(previousStoryLine);
 			}
 			break;
@@ -35,5 +35,18 @@ void draw() {
 			ellipse(400, 200, 50, 50);
 		default:
 			println("We are fucking done");
+	}
+}
+
+void keyReleased() {
+	switch (storyLine) {
+		case "intro":
+			intro.keyReleased();
+			break;
+		case "emdash":
+			emdash.keyReleased();
+			break;
+		case "end":
+			break;
 	}
 }
