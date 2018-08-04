@@ -1,4 +1,4 @@
-class Intro {
+class Home {
 	int incrementer;
 	boolean showCutScenes;
 	String nextScene;
@@ -6,86 +6,57 @@ class Intro {
 	color color2 = color(198, 255, 109);
 	color color3 = color(109, 198, 255);
 	color color4 = color(109, 255, 198);
-	Intro() {
+	Home() {
 		incrementer = 0;
 		showCutScenes = true;
 	}
 	// Basically the draw function
 	void update() {
-		textSize(80);
+		textSize(40);
 		textAlign(CENTER, CENTER);
 		fill(0);
 		switch (incrementer) {
 			case 0:
 				background(color1);
-				text("2048", 0, 0, width, height);
+				text("At home screen 1", 0, 0, width, height);
 				instructionText();
 				break;
 			case 1:
 				background(color2);
-				text("August 18", 0, 0, width, height);
+				text("At home screen 2", 0, 0, width, height);
 				instructionText();
 				break;
 			case 2:
 				background(color3);
-				text("9:00 am", 0, 0, width, height);
+				text("At home screen 3", 0, 0, width, height);
 				instructionText();
 				break;
 			case 3:
-				background(color1);
-				text("You wake up", 0, 0, width, height);
-				instructionText();
-				break;
-			case 4:
-				background(color2);
-				text("You're hungover", 0, 0, width, height);
-				instructionText();
-				break;
-			case 5:
-				background(color3);
-				text("Your sex robot has left you", 0, 0, width, height);
-				instructionText();
-				break;
-			case 6:
-				background(color1);
-				text("Again.", 0, 0, width, height);
-				instructionText();
-				break;
-			case 7:
-				background(color2);
-				text("You're late for work", 0, 0, width, height);
-				instructionText();
-				break;
-			case 8:
-				background(color3);
-				text("Again.", 0, 0, width, height);
-				instructionText();
-				break;
-			case 9:
 				showCutScenes = false;
-				background(color4);
-				text("Do you go to work, or call out sick?", 0, 0, width, height);
+				background(color1);
+				text("Do you want to watch some TV, or go to a bar?", 0, 0, width, height);
 				instructionText();
 				break;
 		}
 	}
 	// Check if this story line is complete
 	boolean isComplete() {
-		return incrementer >= 10;
+		return incrementer >= 4;
 	}
 	// Return the story line we should continue on next
 	String getNextStoryLine() {
-		return nextScene;
+		return "end";
 	}
 	// The key released listener
 	void keyReleased(int codedKey) {
+		println(codedKey);
 		if (showCutScenes && codedKey == 32) {
 			incrementer++;
-		} else if (!showCutScenes && codedKey == 87) { // go to work
-			nextScene = "work";
+		} else if (!showCutScenes && codedKey == 84) { // watch TV
+			nextScene = "tv";
 			incrementer++;
-		} else if (!showCutScenes && codedKey == 83) { // call out sick
-			nextScene = "home";
+		} else if (!showCutScenes && codedKey == 66) { // go to bar
+			nextScene = "bar";
 			incrementer++;
 		}
 	}
@@ -100,7 +71,7 @@ class Intro {
 			textSize(20);
 			textAlign(CENTER, BOTTOM);
 			fill(0);
-			text("(press 'W' to go to work, or 'S' to call out sick)", 0, 0, width, height);
+			text("(press 'T' to watch TV, or 'B' to go to a bar)", 0, 0, width, height);
 		}
 	}
 }

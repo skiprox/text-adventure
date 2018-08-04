@@ -3,6 +3,8 @@ String previousStoryLine;
 String storyLine = "intro";
 Intro intro;
 Emdash emdash;
+Work work;
+Home home;
 
 void setup() {
 	size(800, 800);
@@ -18,7 +20,27 @@ void draw() {
 			} else {
 				previousStoryLine = "intro";
 				storyLine = intro.getNextStoryLine();
-				emdash = new Emdash(previousStoryLine);
+				if (storyLine == "work") {
+					work = new Work();
+				} else if (storyLine == "home") {
+					home = new Home();
+				}
+			}
+			break;
+		case "work":
+			if (!work.isComplete()) {
+				work.update();
+			} else {
+				previousStoryLine = "work";
+				storyLine = work.getNextStoryLine();
+			}
+			break;
+		case "home":
+			if (!home.isComplete()) {
+				home.update();
+			} else {
+				previousStoryLine = "home";
+				storyLine = home.getNextStoryLine();
 			}
 			break;
 		case "emdash":
@@ -33,6 +55,8 @@ void draw() {
 			background(255);
 			fill(198, 255, 90);
 			ellipse(400, 200, 50, 50);
+			println("We are at the end");
+			break;
 		default:
 			println("We are fucking done");
 	}
@@ -45,6 +69,12 @@ void keyReleased() {
 			break;
 		case "emdash":
 			emdash.keyReleased(keyCode);
+			break;
+		case "work":
+			work.keyReleased(keyCode);
+			break;
+		case "home":
+			home.keyReleased(keyCode);
 			break;
 		case "end":
 			break;
