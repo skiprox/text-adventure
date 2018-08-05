@@ -7,9 +7,11 @@ class Work {
 	color color2 = color(198, 255, 109);
 	color color3 = color(109, 198, 255);
 	color color4 = color(109, 255, 198);
+	PImage boss;
 	Work() {
 		incrementer = 0;
 		showCutScenes = true;
+		boss = loadImage("baby.png");
 	}
 	// Basically the draw function
 	void update() {
@@ -23,38 +25,53 @@ class Work {
 				instructionText();
 				break;
 			case 1:
+				background(color1);
+				image(boss, 0, 0);
+				text("BOSS: Why are you late?!?", 0, 0, width, height);
+				instructionText();
+				break;
+			case 2:
+				background(color1);
+				image(boss, 0, 0);
+				text("BOSS: Get to work you ******* piece of ***** **** covered ******* mother ****** **** goblin ***** *** clown *** looking mother ******!!!!!!", 0, 0, width, height);
+				instructionText();
+				break;
+			case 3:
 				showCutScenes = false;
 				background(color2);
 				text("This is your first target – should you bomb them?", 0, 0, width, height);
 				instructionText();
 				break;
-			case 2:
+			case 4:
 				background(color3);
 				text("This is your second target – should you bomb them?", 0, 0, width, height);
 				instructionText();
 				break;
-			case 3:
+			case 5:
 				background(color1);
 				text("This is your third target – should you bomb them?", 0, 0, width, height);
 				instructionText();
 				break;
-			case 4:
+			case 6:
 				background(color2);
 				text("This is your fourth target – should you bomb them?", 0, 0, width, height);
 				instructionText();
 				break;
-			case 5:
+			case 7:
 				background(color3);
 				text("This is your fifth target – should you bomb them?", 0, 0, width, height);
 				instructionText();
 				break;
-			case 6:
+			case 8:
 				showCutScenes = true;
 				background(color4);
+				image(boss, 0, 0);
 				if (timesSaidYes >= 3) {
-					text("Congratulations! You have been promoted for your excellent work. Americans will sleep well tonight knowing that everyone attending that wedding party was slaughtered. You can never be too careful. Looks to be about quitting time, why don't you take off and get a good night sleep – you have another big day ahead of you tomorrow.", 0, 0, width, height);
+					textSize(20);
+					text("BOSS: Congratulations! You have been promoted for your excellent work. Americans will sleep well tonight knowing that everyone attending that wedding party was slaughtered. You can never be too careful. Looks to be about quitting time, why don't you take off and get a good night sleep – you have another big day ahead of you tomorrow.", 0, 0, width, height);
 				} else {
-					text("Unfortunately you have been fired. Please collect your things. Security will escort you out of the building.", 0, 0, width, height);
+					textSize(32);
+					text("BOSS: Unfortunately, you have been fired. Please collect your things. Security will escort you out of the building.", 0, 0, width, height);
 				}
 				instructionText();
 				break;
@@ -62,7 +79,7 @@ class Work {
 	}
 	// Check if this story line is complete
 	boolean isComplete() {
-		return incrementer >= 7;
+		return incrementer >= 9;
 	}
 	// Return the story line we should continue on next
 	String getNextStoryLine() {

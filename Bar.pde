@@ -6,9 +6,15 @@ class Bar {
 	color color2 = color(198, 255, 109);
 	color color3 = color(109, 198, 255);
 	color color4 = color(109, 255, 198);
+	PImage barPerson1;
+	PImage barPerson2;
+	PImage barPerson3;
 	Bar() {
 		incrementer = 0;
 		showCutScenes = true;
+		barPerson1 = loadImage("bar-person-2.png");
+		barPerson2 = loadImage("bar-person-3.png");
+		barPerson3 = loadImage("bar-person-4.png");
 	}
 	// Basically the draw function
 	void update() {
@@ -40,7 +46,8 @@ class Bar {
 			case 4:
 				showCutScenes = true;
 				background(color2);
-				text("Stranger 1 screen", 0, 0, width, height);
+				image(barPerson1, 0, 0);
+				text("STRANGER: ....", 0, 0, width, height);
 				instructionText();
 				break;
 			case 5:
@@ -52,7 +59,8 @@ class Bar {
 			case 6:
 				showCutScenes = true;
 				background(color1);
-				text("Stranger 2 screen", 0, 0, width, height);
+				image(barPerson2, 0, 0);
+				text("STRANGER: ....", 0, 0, width, height);
 				instructionText();
 				break;
 			case 7:
@@ -64,7 +72,8 @@ class Bar {
 			case 8:
 				showCutScenes = true;
 				background(color3);
-				text("Stranger 3 screen", 0, 0, width, height);
+				image(barPerson3, 0, 0);
+				text("STRANGER: ....", 0, 0, width, height);
 				instructionText();
 				break;
 			case 9:
