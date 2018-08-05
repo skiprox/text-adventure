@@ -1,9 +1,12 @@
 class Emdash {
 	int incrementer;
 	boolean showCutScenes;
-	String previousLocation = "suckit";
-	Emdash(String previousStoryLine) {
-		previousLocation = previousStoryLine;
+	String nextScene;
+	color color1 = color(255, 109, 198);
+	color color2 = color(198, 255, 109);
+	color color3 = color(109, 198, 255);
+	color color4 = color(109, 255, 198);
+	Emdash() {
 		incrementer = 0;
 		showCutScenes = true;
 	}
@@ -14,32 +17,41 @@ class Emdash {
 		fill(0);
 		switch (incrementer) {
 			case 0:
-				background(255, 109, 198);
-				text("Third screen goes here, part of intro class", 0, 0, width, height);
+				background(color1);
+				text("On the way to the bar you run into Emdash, your best friend!", 0, 0, width, height);
 				instructionText();
 				break;
 			case 1:
-				background(109, 255, 198);
-				text("Fourth screen goes here, part of intro class", 0, 0, width, height);
+				background(color2);
+				text("Emdash screen 2", 0, 0, width, height);
+				instructionText();
+				break;
+			case 2:
+				background(color3);
+				text("Emdash screen 3", 0, 0, width, height);
+				instructionText();
+				break;
+			case 3:
+				background(color1);
+				text("Emdash screen 4", 0, 0, width, height);
+				instructionText();
+				break;
+			case 4:
+				background(color4);
+				text("Emdash screen 5", 0, 0, width, height);
 				instructionText();
 				break;
 		}
 	}
 	// Check if this story line is complete
 	boolean isComplete() {
-		return incrementer >= 2;
+		return incrementer >= 5;
 	}
 	// Return the story line we should continue on next
 	String getNextStoryLine() {
-		switch(previousLocation) {
-			case "intro":
-				return "end";
-			default:
-				return "intro";
-		}
+		return "bar";
 	}
 	void keyReleased(int codedKey) {
-		println("Some key pressed");
 		incrementer++;
 	}
 	// Show the correct instruction text at the bottom of the screen

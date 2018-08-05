@@ -47,6 +47,8 @@ void draw() {
 					bar = new Bar();
 				} else if (storyLine == "tv") {
 					tv = new Tv();
+				} else if (storyLine == "emdash") {
+					emdash = new Emdash();
 				}
 			}
 			break;
@@ -72,6 +74,7 @@ void draw() {
 			} else {
 				previousStoryLine = "emdash";
 				storyLine = emdash.getNextStoryLine();
+				bar = new Bar();
 			}
 			break;
 		case "end":

@@ -56,7 +56,7 @@ class Home {
 			nextScene = "tv";
 			incrementer++;
 		} else if (!showCutScenes && codedKey == 66) { // go to bar
-			nextScene = "bar";
+			nextScene = "emdash";
 			incrementer++;
 		}
 	}
