@@ -1,3 +1,13 @@
+import processing.sound.*;
+SoundFile musicIntro;
+SoundFile musicWork;
+SoundFile musicHome;
+SoundFile musicEmdash;
+SoundFile musicTv;
+SoundFile musicBar;
+SoundFile musicEnd;
+
+
 int level = 0;
 String previousStoryLine;
 String storyLine = "intro";
@@ -12,6 +22,14 @@ void setup() {
 	size(800, 600);
 	intro = new Intro();
 	background(255);
+	musicIntro = new SoundFile(this, "bar.mp3");
+	musicWork = new SoundFile(this, "bar.mp3");
+	musicHome = new SoundFile(this, "bar.mp3");
+	musicTv = new SoundFile(this, "bar.mp3");
+	musicEmdash = new SoundFile(this, "bar.mp3");
+	musicBar = new SoundFile(this, "bar.mp3");
+	musicEnd = new SoundFile(this, "bar.mp3");
+	musicIntro.play();
 }
 
 void draw() {
@@ -22,10 +40,13 @@ void draw() {
 			} else {
 				previousStoryLine = "intro";
 				storyLine = intro.getNextStoryLine();
+				musicIntro.stop();
 				if (storyLine == "work") {
 					work = new Work();
+					musicWork.play();
 				} else if (storyLine == "home") {
 					home = new Home();
+					musicHome.play();
 				}
 			}
 			break;
@@ -35,6 +56,8 @@ void draw() {
 			} else {
 				previousStoryLine = "work";
 				storyLine = work.getNextStoryLine();
+				musicWork.stop();
+				musicEnd.play();
 			}
 			break;
 		case "home":
@@ -43,12 +66,16 @@ void draw() {
 			} else {
 				previousStoryLine = "home";
 				storyLine = home.getNextStoryLine();
+				musicHome.stop();
 				if (storyLine == "bar") {
 					bar = new Bar();
+					musicBar.play();
 				} else if (storyLine == "tv") {
 					tv = new Tv();
+					musicTv.play();
 				} else if (storyLine == "emdash") {
 					emdash = new Emdash();
+					musicEmdash.play();
 				}
 			}
 			break;
@@ -58,6 +85,8 @@ void draw() {
 			} else {
 				previousStoryLine = "bar";
 				storyLine = bar.getNextStoryLine();
+				musicBar.stop();
+				musicEnd.play();
 			}
 			break;
 		case "tv":
@@ -66,6 +95,8 @@ void draw() {
 			} else {
 				previousStoryLine = "tv";
 				storyLine = tv.getNextStoryLine();
+				musicTv.stop();
+				musicEnd.play();
 			}
 			break;
 		case "emdash":
@@ -75,6 +106,8 @@ void draw() {
 				previousStoryLine = "emdash";
 				storyLine = emdash.getNextStoryLine();
 				bar = new Bar();
+				musicEmdash.stop();
+				musicBar.play();
 			}
 			break;
 		case "end":

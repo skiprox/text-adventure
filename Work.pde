@@ -21,45 +21,49 @@ class Work {
 		switch (incrementer) {
 			case 0:
 				background(color1);
-				text("Welcome to work! Here at Terror Corp, a US military subsidiary, you play a small but vital role in the war on terror. As an unmanned drone operator it is your job to assess the threat levels of situations and decide whether to bomb the targets or not.", 0, 0, width, height);
+				textSize(24);
+				text("Welcome to work! Here at Terror Corp, a US military subsidiary, you play a small but vital role in the war on terror. As an unmanned drone operator it is your job to assess the threat levels of situations and decide whether to bomb the targets or not.", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 1:
 				background(color1);
+				textSize(40);
 				image(boss, 0, 0);
-				text("BOSS: Why are you late?!?", 0, 0, width, height);
+				text("BOSS: Why are you late?!?", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 2:
 				background(color1);
+				textSize(24);
 				image(boss, 0, 0);
-				text("BOSS: Get to work you ******* piece of ***** **** covered ******* mother ****** **** goblin ***** *** clown *** looking mother ******!!!!!!", 0, 0, width, height);
+				text("BOSS: This is unacceptable! I don't care if you have cancer – everyone has cancer! If this pattern of behavior continues I'll have no choice but to fire you. How do you think that would make me feel, huh?", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 3:
 				showCutScenes = false;
+				textSize(40);
 				background(color2);
-				text("This is your first target – should you bomb them?", 0, 0, width, height);
+				text("This is your first target – should you bomb them?", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 4:
 				background(color3);
-				text("This is your second target – should you bomb them?", 0, 0, width, height);
+				text("This is your second target – should you bomb them?", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 5:
 				background(color1);
-				text("This is your third target – should you bomb them?", 0, 0, width, height);
+				text("This is your third target – should you bomb them?", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 6:
 				background(color2);
-				text("This is your fourth target – should you bomb them?", 0, 0, width, height);
+				text("This is your fourth target – should you bomb them?", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 7:
 				background(color3);
-				text("This is your fifth target – should you bomb them?", 0, 0, width, height);
+				text("This is your fifth target – should you bomb them?", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 8:
@@ -67,11 +71,11 @@ class Work {
 				background(color4);
 				image(boss, 0, 0);
 				if (timesSaidYes >= 3) {
-					textSize(20);
-					text("BOSS: Congratulations! You have been promoted for your excellent work. Americans will sleep well tonight knowing that everyone attending that wedding party was slaughtered. You can never be too careful. Looks to be about quitting time, why don't you take off and get a good night sleep – you have another big day ahead of you tomorrow.", 0, 0, width, height);
+					textSize(24);
+					text("BOSS: Congratulations! You have been promoted for your excellent work. Americans will sleep well tonight knowing that everyone attending that wedding party was slaughtered. You can never be too careful. Looks to be about quitting time, why don't you take off and get a good night sleep – you have another big day ahead of you tomorrow.", 20, 0, width - 40, height);
 				} else {
-					textSize(32);
-					text("BOSS: Unfortunately, you have been fired. Please collect your things. Security will escort you out of the building.", 0, 0, width, height);
+					textSize(24);
+					text("BOSS: Unfortunately, we're going to have to let you go. Since you never had healthcare there's not much paperwork to take care of. Please collect your things. Security will escort you out of the building.", 20, 0, width - 40, height);
 				}
 				instructionText();
 				break;
