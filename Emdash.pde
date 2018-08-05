@@ -12,7 +12,7 @@ class Emdash {
 	}
 	// Basically the draw function
 	void update() {
-		textSize(80);
+		textSize(40);
 		textAlign(CENTER, CENTER);
 		fill(0);
 		switch (incrementer) {

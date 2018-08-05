@@ -9,7 +9,7 @@ Bar bar;
 Tv tv;
 
 void setup() {
-	size(800, 800);
+	size(800, 600);
 	intro = new Intro();
 	background(255);
 }
