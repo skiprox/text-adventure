@@ -108,12 +108,12 @@ class Work {
 			textSize(20);
 			textAlign(CENTER, BOTTOM);
 			fill(0);
-			text("(press space to continue)", 0, 0, width, height);
+			text("(press space to continue)", 20, 0, width - 40, height);
 		} else {
 			textSize(20);
 			textAlign(CENTER, BOTTOM);
 			fill(0);
-			text("(press 'Y' to bomb, or 'N' to not)", 0, 0, width, height);
+			text("(press 'Y' to bomb, or 'N' to not)", 20, 0, width - 40, height);
 		}
 	}
 }

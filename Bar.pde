@@ -24,69 +24,79 @@ class Bar {
 		switch (incrementer) {
 			case 0:
 				background(color1);
-				text("Bar screen 1", 0, 0, width, height);
+				text("Bar screen 1", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 1:
 				background(color2);
-				text("Bar screen 2", 0, 0, width, height);
+				text("Bar screen 2", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 2:
 				background(color3);
-				text("Bar screen 3", 0, 0, width, height);
+				text("Bar screen 3", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 3:
 				showCutScenes = false;
 				background(color1);
-				text("Do you want to talk to a stranger?", 0, 0, width, height);
+				text("Do you want to talk to a stranger?", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 4:
+				textSize(24);
 				showCutScenes = true;
 				background(color2);
 				image(barPerson1, 0, 0);
-				text("STRANGER: ....", 0, 0, width, height);
+				text("STRANGER: Is that a PLASTIC STRAW you're using?! Don't you know those things are horrible for the environment?", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 5:
-				showCutScenes = false;
-				background(color3);
-				text("Do you want to talk to a stranger?", 0, 0, width, height);
+				textSize(24);
+				showCutScenes = true;
+				background(color2);
+				image(barPerson1, 0, 0);
+				text("STRANGER: As senior vice president of sales at Exxon, Chevron, Conoco & Associates I made sure we pushed an initiative that eliminated all plastic straws in our company breakrooms. What have YOU ever done for the environment?", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 6:
-				showCutScenes = true;
-				background(color1);
-				image(barPerson2, 0, 0);
-				text("STRANGER: ....", 0, 0, width, height);
+				textSize(40);
+				showCutScenes = false;
+				background(color3);
+				text("Do you want to talk to a stranger?", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 7:
-				showCutScenes = false;
-				background(color2);
-				text("Do you want to talk to a stranger?", 0, 0, width, height);
+				showCutScenes = true;
+				background(color1);
+				image(barPerson2, 0, 0);
+				text("STRANGER: ....", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 8:
-				showCutScenes = true;
-				background(color3);
-				image(barPerson3, 0, 0);
-				text("STRANGER: ....", 0, 0, width, height);
+				showCutScenes = false;
+				background(color2);
+				text("Do you want to talk to a stranger?", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 9:
 				showCutScenes = true;
+				background(color3);
+				image(barPerson3, 0, 0);
+				text("STRANGER: ....", 20, 0, width - 40, height);
+				instructionText();
+				break;
+			case 10:
+				showCutScenes = true;
 				background(color4);
-				text("You are drunk. You pass out.", 0, 0, width, height);
+				text("You are drunk. You pass out.", 20, 0, width - 40, height);
 				instructionText();
 				break;
 		}
 	}
 	// Check if this story line is complete
 	boolean isComplete() {
-		return incrementer >= 10;
+		return incrementer >= 11;
 	}
 	// Return the story line we should continue on next
 	String getNextStoryLine() {
@@ -109,12 +119,12 @@ class Bar {
 			textSize(20);
 			textAlign(CENTER, BOTTOM);
 			fill(0);
-			text("(press space to continue)", 0, 0, width, height);
+			text("(press space to continue)", 20, 0, width - 40, height);
 		} else {
 			textSize(20);
 			textAlign(CENTER, BOTTOM);
 			fill(0);
-			text("(press 'Y' to talk to stranger, or 'N' to continue drinking)", 0, 0, width, height);
+			text("(press 'Y' to talk to stranger, or 'N' to continue drinking)", 20, 0, width - 40, height);
 		}
 	}
 }

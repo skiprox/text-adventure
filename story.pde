@@ -22,13 +22,13 @@ void setup() {
 	size(800, 600);
 	intro = new Intro();
 	background(255);
-	musicIntro = new SoundFile(this, "bar.mp3");
-	musicWork = new SoundFile(this, "bar.mp3");
-	musicHome = new SoundFile(this, "bar.mp3");
-	musicTv = new SoundFile(this, "bar.mp3");
-	musicEmdash = new SoundFile(this, "bar.mp3");
+	musicIntro = new SoundFile(this, "intro.mp3");
+	musicWork = new SoundFile(this, "work.mp3");
+	musicHome = new SoundFile(this, "home.mp3");
+	musicTv = new SoundFile(this, "tv.mp3");
+	musicEmdash = new SoundFile(this, "emdash.mp3");
 	musicBar = new SoundFile(this, "bar.mp3");
-	musicEnd = new SoundFile(this, "bar.mp3");
+	musicEnd = new SoundFile(this, "end.mp3");
 	musicIntro.play();
 }
 
