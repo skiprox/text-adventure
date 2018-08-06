@@ -54,7 +54,7 @@ class Bar {
 			case 5:
 				textSize(24);
 				showCutScenes = true;
-				background(color2);
+				background(color3);
 				image(barPerson1, 0, 0);
 				text("STRANGER: As senior vice president of sales at Exxon, Chevron, Conoco & Associates I made sure we pushed an initiative that eliminated all plastic straws in our company breakrooms. What have YOU ever done for the environment?", 20, 0, width - 40, height);
 				instructionText();
@@ -62,31 +62,45 @@ class Bar {
 			case 6:
 				textSize(40);
 				showCutScenes = false;
-				background(color3);
+				background(color1);
 				text("Do you want to talk to a stranger?", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 7:
 				showCutScenes = true;
-				background(color1);
+				background(color2);
 				image(barPerson2, 0, 0);
 				text("STRANGER: ....", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 8:
-				showCutScenes = false;
-				background(color2);
-				text("Do you want to talk to a stranger?", 20, 0, width - 40, height);
+				showCutScenes = true;
+				background(color3);
+				image(barPerson2, 0, 0);
+				text("STRANGER: ....", 20, 0, width - 40, height);
 				instructionText();
 				break;
 			case 9:
+				showCutScenes = false;
+				background(color1);
+				text("Do you want to talk to a stranger?", 20, 0, width - 40, height);
+				instructionText();
+				break;
+			case 10:
+				showCutScenes = true;
+				background(color2);
+				image(barPerson3, 0, 0);
+				text("STRANGER: ....", 20, 0, width - 40, height);
+				instructionText();
+				break;
+			case 11:
 				showCutScenes = true;
 				background(color3);
 				image(barPerson3, 0, 0);
 				text("STRANGER: ....", 20, 0, width - 40, height);
 				instructionText();
 				break;
-			case 10:
+			case 12:
 				showCutScenes = true;
 				background(color4);
 				text("You are drunk. You pass out.", 20, 0, width - 40, height);
@@ -96,7 +110,7 @@ class Bar {
 	}
 	// Check if this story line is complete
 	boolean isComplete() {
-		return incrementer >= 11;
+		return incrementer >= 13;
 	}
 	// Return the story line we should continue on next
 	String getNextStoryLine() {
