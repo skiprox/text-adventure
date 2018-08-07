@@ -1,3 +1,14 @@
+/*
+ * STORY LINES
+ * ------------
+ * Intro
+ * Work
+ * Home
+ * Emdash
+ * Tv
+ * Bar
+ * End 
+ */
 import processing.sound.*;
 SoundFile musicIntro;
 SoundFile musicWork;

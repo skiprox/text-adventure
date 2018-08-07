@@ -1,12 +1,7 @@
-class Emdash {
-	int incrementer;
-	boolean showCutScenes;
-	String nextScene;
-	color color1 = color(255, 109, 198);
-	color color2 = color(198, 255, 109);
-	color color3 = color(109, 198, 255);
-	color color4 = color(109, 255, 198);
+class Emdash extends SceneHelper {
+	PImage pigeon;
 	Emdash() {
+		pigeon = loadImage("pigeon.png");
 		incrementer = 0;
 		showCutScenes = true;
 	}
@@ -18,27 +13,32 @@ class Emdash {
 		switch (incrementer) {
 			case 0:
 				background(color1);
-				text("On the way to the bar you run into Emdash, your best friend!", 0, 0, width, height);
+				image(pigeon, 0, 0);
+				writeCenterText("On the way to the bar you run into Emdash, your best friend!", 40);
 				instructionText();
 				break;
 			case 1:
 				background(color2);
-				text("Emdash screen 2", 0, 0, width, height);
+				image(pigeon, 0, 0);
+				writeCenterText("EMDASH: *cooo* *cooooooooooooo* *cooo*", 40);
 				instructionText();
 				break;
 			case 2:
 				background(color3);
-				text("Emdash screen 3", 0, 0, width, height);
+				image(pigeon, 0, 0);
+				writeCenterText("EMDASH: *coooooooooooooooo*", 40);
 				instructionText();
 				break;
 			case 3:
 				background(color1);
-				text("Emdash screen 4", 0, 0, width, height);
+				image(pigeon, 0, 0);
+				writeCenterText("EMDASH: *coo*", 40);
 				instructionText();
 				break;
 			case 4:
 				background(color4);
-				text("Emdash screen 5", 0, 0, width, height);
+				image(pigeon, 0, 0);
+				writeCenterText("EMDASH: *cooooo* *cooo* *cooooo* *coooo* *cooooooooo* *coooo* *coo* *cooooo*, *cooo* *coo* *coooooo*", 40);
 				instructionText();
 				break;
 		}
@@ -57,10 +57,7 @@ class Emdash {
 	// Show the correct instruction text at the bottom of the screen
 	void instructionText() {
 		if (showCutScenes) {
-			textSize(20);
-			textAlign(CENTER, BOTTOM);
-			fill(0);
-			text("(press space to continue)", 0, 0, width, height);
+			writeBottomText("(press space to continue)", 20);
 		}
 	}
 }

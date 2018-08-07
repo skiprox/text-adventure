@@ -1,11 +1,4 @@
-class Home {
-	int incrementer;
-	boolean showCutScenes;
-	String nextScene;
-	color color1 = color(255, 109, 198);
-	color color2 = color(198, 255, 109);
-	color color3 = color(109, 198, 255);
-	color color4 = color(109, 255, 198);
+class Home extends SceneHelper {
 	Home() {
 		incrementer = 0;
 		showCutScenes = true;
@@ -18,23 +11,23 @@ class Home {
 		switch (incrementer) {
 			case 0:
 				background(color1);
-				text("At home screen 1", 0, 0, width, height);
+				writeCenterText("At home screen 1", 40);
 				instructionText();
 				break;
 			case 1:
 				background(color2);
-				text("At home screen 2", 0, 0, width, height);
+				writeCenterText("At home screen 2", 40);
 				instructionText();
 				break;
 			case 2:
 				background(color3);
-				text("At home screen 3", 0, 0, width, height);
+				writeCenterText("At home screen 3", 40);
 				instructionText();
 				break;
 			case 3:
 				showCutScenes = false;
 				background(color1);
-				text("Do you want to watch some TV, or go to a bar?", 0, 0, width, height);
+				writeCenterText("Do you want to watch some TV, or go to a bar?", 40);
 				instructionText();
 				break;
 		}
@@ -63,15 +56,9 @@ class Home {
 	// Show the correct instruction text at the bottom of the screen
 	void instructionText() {
 		if (showCutScenes) {
-			textSize(20);
-			textAlign(CENTER, BOTTOM);
-			fill(0);
-			text("(press space to continue)", 0, 0, width, height);
+			writeBottomText("(press space to continue)", 20);
 		} else {
-			textSize(20);
-			textAlign(CENTER, BOTTOM);
-			fill(0);
-			text("(press 'T' to watch TV, or 'B' to go to a bar)", 0, 0, width, height);
+			writeBottomText("(press 'T' to watch TV, or 'B' to go to a bar)", 20);
 		}
 	}
 }
