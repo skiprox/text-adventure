@@ -40,7 +40,7 @@ void setup() {
 	musicEmdash = new SoundFile(this, "emdash.mp3");
 	musicBar = new SoundFile(this, "bar.mp3");
 	musicEnd = new SoundFile(this, "end.mp3");
-	musicIntro.play();
+	musicIntro.loop();
 }
 
 void draw() {
@@ -54,10 +54,10 @@ void draw() {
 				musicIntro.stop();
 				if (storyLine == "work") {
 					work = new Work();
-					musicWork.play();
+					musicWork.loop();
 				} else if (storyLine == "home") {
 					home = new Home();
-					musicHome.play();
+					musicHome.loop();
 				}
 			}
 			break;
@@ -68,7 +68,7 @@ void draw() {
 				previousStoryLine = "work";
 				storyLine = work.getNextStoryLine();
 				musicWork.stop();
-				musicEnd.play();
+				musicEnd.loop();
 			}
 			break;
 		case "home":
@@ -80,13 +80,13 @@ void draw() {
 				musicHome.stop();
 				if (storyLine == "bar") {
 					bar = new Bar();
-					musicBar.play();
+					musicBar.loop();
 				} else if (storyLine == "tv") {
 					tv = new Tv();
-					musicTv.play();
+					musicTv.loop();
 				} else if (storyLine == "emdash") {
 					emdash = new Emdash();
-					musicEmdash.play();
+					musicEmdash.loop();
 				}
 			}
 			break;
@@ -97,7 +97,7 @@ void draw() {
 				previousStoryLine = "bar";
 				storyLine = bar.getNextStoryLine();
 				musicBar.stop();
-				musicEnd.play();
+				musicEnd.loop();
 			}
 			break;
 		case "tv":
@@ -107,7 +107,7 @@ void draw() {
 				previousStoryLine = "tv";
 				storyLine = tv.getNextStoryLine();
 				musicTv.stop();
-				musicEnd.play();
+				musicEnd.loop();
 			}
 			break;
 		case "emdash":
@@ -118,7 +118,7 @@ void draw() {
 				storyLine = emdash.getNextStoryLine();
 				bar = new Bar();
 				musicEmdash.stop();
-				musicBar.play();
+				musicBar.loop();
 			}
 			break;
 		case "end":
