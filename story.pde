@@ -40,6 +40,7 @@ void setup() {
 	musicEmdash = new SoundFile(this, "emdash.mp3");
 	musicBar = new SoundFile(this, "bar.mp3");
 	musicEnd = new SoundFile(this, "end.mp3");
+	musicEnd.stop();
 	musicIntro.loop();
 }
 
@@ -123,10 +124,8 @@ void draw() {
 			break;
 		case "end":
 			background(255);
-			textSize(120);
-			textAlign(CENTER, CENTER);
-			fill(0);
-			text("the end", 0, 0, width, height);
+			writeCenterText("the end", 120);
+			writeBottomText("(press space to restart)", 20);
 			break;
 		default:
 			println("We are fucking done");
@@ -154,6 +153,30 @@ void keyReleased() {
 			tv.keyReleased(keyCode);
 			break;
 		case "end":
+			if (keyCode == 32) {
+				musicEnd.stop();
+				background(255);
+				storyLine = "intro";
+				intro = new Intro();
+				musicIntro.loop();
+			}
 			break;
 	}
+}
+
+void writeCenterText(String textString, int fontSize) {
+	textSize(fontSize);
+	textAlign(CENTER, CENTER);
+	fill(255);
+	text(textString, 21, 1, width - 40, height);
+	fill(0);
+	text(textString, 20, 0, width - 40, height);
+}
+void writeBottomText(String textString, int fontSize) {
+	textSize(fontSize);
+	textAlign(CENTER, BOTTOM);
+	fill(255);
+	text(textString, 21, -19, width - 40, height);
+	fill(0);
+	text(textString, 20, -20, width - 40, height);
 }
