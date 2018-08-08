@@ -1,8 +1,16 @@
 class Tv extends SceneHelper {
+	PImage tv1;
+	PImage tv2;
+	PImage food;
+	int tvScreen1Incrementer = 0;
 	int tvScreen2Incrementer = 0;
+	int tvScreen3Incrementer = 0;
 	Tv() {
 		incrementer = 0;
 		showCutScenes = true;
+		tv1 = loadImage("tv-1.png");
+		tv2 = loadImage("tv-2.png");
+		food = loadImage("lasagna.png");
 	}
 	// Basically the draw function
 	void update() {
@@ -25,19 +33,33 @@ class Tv extends SceneHelper {
 			case 3:
 				showCutScenes = false;
 				background(random(100, 255), random(100, 255), random(100, 255), 100);
-				writeCenterText("WAR", 120);
+				image(tv1, 0, 0);
+				if (tvScreen1Incrementer < 140) {
+					writeCenterText("WAR", 120);
+				} else if (tvScreen1Incrementer < 280) {
+					writeCenterText("REALLY, THAT\'S IT", 80);
+				} else {
+					writeCenterText("JUST WAR", 100);
+				}
+				tvScreen1Incrementer++;
 				instructionText();
 				break;
 			case 4:
 				showCutScenes = false;
-				background(color1);
+				background(random(100, 255), random(100, 255), random(100, 255), 100);
 				if (tvScreen2Incrementer < 140) {
+					image(tv2, 0, 0);
 					writeCenterText("SEX", 120);
 				} else if (tvScreen2Incrementer < 280) {
+					image(tv2, 0, 0);
 					writeCenterText("ALSO,", 120);
 				} else if (tvScreen2Incrementer < 420) {
+					image(food, 0, 0);
+					image(tv2, 0, 0);
 					writeCenterText("FOOD?", 120);
 				} else {
+					image(food, 0, 0);
+					image(tv2, 0, 0);
 					writeCenterText("Every day,\nonly on HBO-CNN-USA Network", 40);
 				}
 				tvScreen2Incrementer++;

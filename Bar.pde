@@ -1,10 +1,12 @@
 class Bar extends SceneHelper {
+	PImage bar;
 	PImage barPerson1;
 	PImage barPerson2;
 	PImage barPerson3;
 	Bar() {
 		incrementer = 0;
 		showCutScenes = true;
+		bar = loadImage("bar.png");
 		barPerson1 = loadImage("bar-person-2.png");
 		barPerson2 = loadImage("bar-person-3.png");
 		barPerson3 = loadImage("bar-person-4.png");
@@ -14,22 +16,26 @@ class Bar extends SceneHelper {
 		switch (incrementer) {
 			case 0:
 				background(color1);
+				image(bar, 0, 0);
 				writeCenterText("Bar screen 1", 40);
 				instructionText();
 				break;
 			case 1:
 				background(color2);
+				image(bar, 0, 0);
 				writeCenterText("Bar screen 2", 40);
 				instructionText();
 				break;
 			case 2:
 				background(color3);
+				image(bar, 0, 0);
 				writeCenterText("Bar screen 3", 40);
 				instructionText();
 				break;
 			case 3:
 				showCutScenes = false;
 				background(color1);
+				image(bar, 0, 0);
 				writeCenterText("Do you want to talk to a stranger?", 40);
 				instructionText();
 				break;
@@ -50,6 +56,7 @@ class Bar extends SceneHelper {
 			case 6:
 				showCutScenes = false;
 				background(color1);
+				image(bar, 0, 0);
 				writeCenterText("Do you want to talk to a stranger?", 40);
 				instructionText();
 				break;
@@ -57,19 +64,20 @@ class Bar extends SceneHelper {
 				showCutScenes = true;
 				background(color2);
 				image(barPerson2, 0, 0);
-				writeCenterText("STRANGER: ....", 24);
+				writeCenterText("STRANGER: My heat went out last winter and my landlord refused to do anything about it. I tried witholding rent, but he took me to court and won because technically it wasn\'t cold enough for me to die.", 24);
 				instructionText();
 				break;
 			case 8:
 				showCutScenes = true;
 				background(color3);
 				image(barPerson2, 0, 0);
-				writeCenterText("STRANGER: ....", 24);
+				writeCenterText("STRANGER: So, I hate landlards as much as the next person – but without them, where we would get houses?", 24);
 				instructionText();
 				break;
 			case 9:
 				showCutScenes = false;
 				background(color1);
+				image(bar, 0, 0);
 				writeCenterText("Do you want to talk to a stranger?", 40);
 				instructionText();
 				break;
@@ -77,14 +85,14 @@ class Bar extends SceneHelper {
 				showCutScenes = true;
 				background(color2);
 				image(barPerson3, 0, 0);
-				writeCenterText("STRANGER: ....", 24);
+				writeCenterText("STRANGER: I used to think that it was a mistake to bring children into this world, but then the government passed the Declining Birthrate Debt Foregiveness Law... Now I have four.", 24);
 				instructionText();
 				break;
 			case 11:
 				showCutScenes = true;
 				background(color3);
 				image(barPerson3, 0, 0);
-				writeCenterText("STRANGER: ....", 24);
+				writeCenterText("STRANGER: And I\'ve cut my debt down to $80,000. Another 35 years and I\'ll be all paid off.", 24);
 				instructionText();
 				break;
 			case 12:
