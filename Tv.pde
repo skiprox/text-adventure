@@ -19,20 +19,10 @@ class Tv extends SceneHelper {
 		switch (incrementer) {
 			case 0:
 				background(color1);
-				writeCenterText("TV screen 1", 40);
+				writeCenterText("Watching TV can be fun and relaxing.", 40);
 				instructionText();
 				break;
 			case 1:
-				background(color2);
-				writeCenterText("TV screen 2", 40);
-				instructionText();
-				break;
-			case 2:
-				background(color3);
-				writeCenterText("TV screen 3", 40);
-				instructionText();
-				break;
-			case 3:
 				showCutScenes = false;
 				background(random(200, 255), random(200, 255), random(200, 255), 100);
 				image(tv1, 0, 0);
@@ -48,7 +38,7 @@ class Tv extends SceneHelper {
 				tvScreen1Incrementer++;
 				instructionText();
 				break;
-			case 4:
+			case 2:
 				background(random(200, 255), random(200, 255), random(200, 255), 100);
 				if (tvScreen2Incrementer < 140) {
 					image(tv2, 0, 0);
@@ -68,7 +58,7 @@ class Tv extends SceneHelper {
 				tvScreen2Incrementer++;
 				instructionText();
 				break;
-			case 5:
+			case 3:
 				background(random(200, 255), random(200, 255), random(200, 255), 100);
 				if (tvScreen3Incrementer < 140) {
 					image(war3, 0, 0);
@@ -80,7 +70,7 @@ class Tv extends SceneHelper {
 				tvScreen3Incrementer++;
 				instructionText();
 				break;
-			case 6:
+			case 4:
 				showCutScenes = true;
 				background(color4);
 				writeCenterText("You pass out", 40);
@@ -90,7 +80,7 @@ class Tv extends SceneHelper {
 	}
 	// Check if this story line is complete
 	boolean isComplete() {
-		return incrementer >= 7;
+		return incrementer >= 5;
 	}
 	// Return the story line we should continue on next
 	String getNextStoryLine() {
@@ -103,7 +93,7 @@ class Tv extends SceneHelper {
 		} else if (!showCutScenes && codedKey == 89) { // Change the channel
 			incrementer++;
 		} else if (!showCutScenes && codedKey == 78) { // pass out
-			incrementer = 6;
+			incrementer = 4;
 		}
 	}
 	// Show the correct instruction text at the bottom of the screen

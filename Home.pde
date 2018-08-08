@@ -13,7 +13,7 @@ class Home extends SceneHelper {
 		switch (incrementer) {
 			case 0:
 				background(color1);
-				writeCenterText("At home screen 1", 40);
+				writeCenterText("Ahhh, home sweet home! You've been living on this houseboat where 5th Street and Ave B used to be for about 8 years now. Having seven roommates can be rough some times, but there's no way you're ever going to own a home so you might as well get used to it.", 24);
 				instructionText();
 				break;
 			case 1:
