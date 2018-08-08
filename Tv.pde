@@ -1,4 +1,5 @@
 class Tv extends SceneHelper {
+	int tvScreen2Incrementer = 0;
 	Tv() {
 		incrementer = 0;
 		showCutScenes = true;
@@ -30,7 +31,16 @@ class Tv extends SceneHelper {
 			case 4:
 				showCutScenes = false;
 				background(color1);
-				writeCenterText("TV Channel 2", 120);
+				if (tvScreen2Incrementer < 140) {
+					writeCenterText("SEX", 120);
+				} else if (tvScreen2Incrementer < 280) {
+					writeCenterText("ALSO,", 120);
+				} else if (tvScreen2Incrementer < 420) {
+					writeCenterText("FOOD?", 120);
+				} else {
+					writeCenterText("Every day,\nonly on HBO-CNN-USA Network", 40);
+				}
+				tvScreen2Incrementer++;
 				instructionText();
 				break;
 			case 5:

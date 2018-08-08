@@ -7,13 +7,13 @@ class End extends SceneHelper {
 	void update() {
 		switch (incrementer) {
 			case 0:
-				background(color1);
+				background(0);
 				writeCenterText("the end", 120);
 				instructionText();
 				break;
 			case 1:
 				showCutScenes = false;
-				background(color2);
+				background(0);
 				writeCenterText("Made by Sean Scanlan\nat Parsons MFADT\nMusic by Jahzzar from the Free Music Archive", 60);
 				instructionText();
 				break;
