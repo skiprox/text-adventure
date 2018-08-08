@@ -85,7 +85,7 @@ class Bar extends SceneHelper {
 				showCutScenes = true;
 				background(color2);
 				image(barPerson3, 0, 0);
-				writeCenterText("STRANGER: I used to think that it was a mistake to bring children into this world, but then the government passed the Declining Birthrate Debt Foregiveness Law... Now I have four.", 24);
+				writeCenterText("STRANGER: I used to think that it was a mistake to bring children into this world, but then the government passed the Declining Birthrate Debt Foregiveness Act... Now I have four.", 24);
 				instructionText();
 				break;
 			case 11:

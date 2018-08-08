@@ -1,7 +1,9 @@
 class Home extends SceneHelper {
+	PImage roommate;
 	Home() {
 		incrementer = 0;
 		showCutScenes = true;
+		roommate = loadImage("roommate-1.png");
 	}
 	// Basically the draw function
 	void update() {
@@ -16,17 +18,37 @@ class Home extends SceneHelper {
 				break;
 			case 1:
 				background(color2);
-				writeCenterText("At home screen 2", 40);
+				image(roommate, 0, 0);
+				writeCenterText("ROOMMATE: Heyyyyyy roommie... was that bottle of whiskey in your room yours?", 32);
 				instructionText();
 				break;
 			case 2:
 				background(color3);
-				writeCenterText("At home screen 3", 40);
+				image(roommate, 0, 0);
+				writeCenterText("ROOMMATE: ....", 32);
 				instructionText();
 				break;
 			case 3:
-				showCutScenes = false;
 				background(color1);
+				image(roommate, 0, 0);
+				writeCenterText("ROOMMATE: ....", 32);
+				instructionText();
+				break;
+			case 4:
+				background(color2);
+				image(roommate, 0, 0);
+				writeCenterText("ROOMMATE: ....", 32);
+				instructionText();
+				break;
+			case 5:
+				background(color3);
+				image(roommate, 0, 0);
+				writeCenterText("ROOMMATE: I drank it. I hope that's ok.", 32);
+				instructionText();
+				break;
+			case 6:
+				showCutScenes = false;
+				background(color4);
 				writeCenterText("Do you want to watch some TV, or go to a bar?", 40);
 				instructionText();
 				break;
@@ -34,7 +56,7 @@ class Home extends SceneHelper {
 	}
 	// Check if this story line is complete
 	boolean isComplete() {
-		return incrementer >= 4;
+		return incrementer >= 7;
 	}
 	// Return the story line we should continue on next
 	String getNextStoryLine() {
