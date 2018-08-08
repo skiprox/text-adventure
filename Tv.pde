@@ -18,7 +18,7 @@ class Tv extends SceneHelper {
 	void update() {
 		switch (incrementer) {
 			case 0:
-				background(color1);
+				background(colorArray[incrementer%3]);
 				writeCenterText("Watching TV can be fun and relaxing.", 40);
 				instructionText();
 				break;
@@ -72,7 +72,7 @@ class Tv extends SceneHelper {
 				break;
 			case 4:
 				showCutScenes = true;
-				background(color4);
+				background(colorArray[3]);
 				writeCenterText("You pass out", 40);
 				instructionText();
 				break;

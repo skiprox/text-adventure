@@ -21,56 +21,56 @@ class Work extends SceneHelper {
 	void update() {
 		switch (incrementer) {
 			case 0:
-				background(color1);
+				background(colorArray[incrementer%3]);
 				writeCenterText("Welcome to work! Here at Terror Corp, a US military subsidiary, you play a small but vital role in the war on terror. As an unmanned drone operator it is your job to assess the threat levels of situations and decide whether to bomb the targets or not.", 24);
 				instructionText();
 				break;
 			case 1:
-				background(color1);
+				background(colorArray[incrementer%3]);
 				image(boss, 0, 0);
 				writeCenterText("BOSS: Why are you late?!?", 40);
 				instructionText();
 				break;
 			case 2:
-				background(color1);
+				background(colorArray[incrementer%3]);
 				image(boss, 0, 0);
 				writeCenterText("BOSS: This is unacceptable! I don't care if you have cancer – everyone has cancer! If this pattern of behavior continues I'll have no choice but to fire you. How do you think that would make me feel, huh?", 24);
 				instructionText();
 				break;
 			case 3:
 				showCutScenes = false;
-				background(color2);
+				background(colorArray[incrementer%3]);
 				image(war1, 0, 0);
 				writeCenterText("This is your first target – should you bomb them?", 40);
 				instructionText();
 				break;
 			case 4:
-				background(color3);
+				background(colorArray[incrementer%3]);
 				image(war2, 0, 0);
 				writeCenterText("This is your second target – should you bomb them?", 40);
 				instructionText();
 				break;
 			case 5:
-				background(color1);
+				background(colorArray[incrementer%3]);
 				image(war3, 0, 0);
 				writeCenterText("This is your third target – should you bomb them?", 40);
 				instructionText();
 				break;
 			case 6:
-				background(color2);
+				background(colorArray[incrementer%3]);
 				image(war4, 0, 0);
 				writeCenterText("This is your fourth target – should you bomb them?", 40);
 				instructionText();
 				break;
 			case 7:
-				background(color3);
+				background(colorArray[incrementer%3]);
 				image(war5, 0, 0);
 				writeCenterText("This is your fifth target – should you bomb them?", 40);
 				instructionText();
 				break;
 			case 8:
 				showCutScenes = true;
-				background(color4);
+				background(colorArray[3]);
 				image(boss, 0, 0);
 				if (timesSaidYes >= 3) {
 					writeCenterText("BOSS: Congratulations! You have been promoted for your excellent work. Americans will sleep well tonight knowing that everyone attending that wedding party was slaughtered. You can never be too careful. Looks to be about quitting time, why don't you take off and get a good night sleep – you have another big day ahead of you tomorrow.", 24);
@@ -95,10 +95,18 @@ class Work extends SceneHelper {
 			incrementer++;
 		} else if (!showCutScenes && codedKey == 89) { // bomb
 			timesSaidYes++;
-			incrementer++;
+			if (timesSaidYes >= 3) {
+				incrementer = 8;
+			} else {
+				incrementer++;
+			}
 		} else if (!showCutScenes && codedKey == 78) { // no bomb
 			timesSaidNo++;
-			incrementer++;
+			if (timesSaidNo >= 3) {
+				incrementer = 8;
+			} else {
+				incrementer++;
+			}
 		}
 	}
 	// Show the correct instruction text at the bottom of the screen

@@ -12,43 +12,43 @@ class Home extends SceneHelper {
 		fill(0);
 		switch (incrementer) {
 			case 0:
-				background(color1);
+				background(colorArray[incrementer%3]);
 				writeCenterText("Ahhh, home sweet home! You've been living on this houseboat where 5th Street and Ave B used to be for about 8 years now. Having seven roommates can be rough some times, but there's no way you're ever going to own a home so you might as well get used to it.", 24);
 				instructionText();
 				break;
 			case 1:
-				background(color2);
+				background(colorArray[incrementer%3]);
 				image(roommate, 0, 0);
 				writeCenterText("ROOMMATE: Heyyyyyy roommie... was that bottle of whiskey in your room yours?", 32);
 				instructionText();
 				break;
 			case 2:
-				background(color3);
+				background(colorArray[incrementer%3]);
 				image(roommate, 0, 0);
 				writeCenterText("ROOMMATE: ....", 32);
 				instructionText();
 				break;
 			case 3:
-				background(color1);
+				background(colorArray[incrementer%3]);
 				image(roommate, 0, 0);
 				writeCenterText("ROOMMATE: ....", 32);
 				instructionText();
 				break;
 			case 4:
-				background(color2);
+				background(colorArray[incrementer%3]);
 				image(roommate, 0, 0);
 				writeCenterText("ROOMMATE: ....", 32);
 				instructionText();
 				break;
 			case 5:
-				background(color3);
+				background(colorArray[incrementer%3]);
 				image(roommate, 0, 0);
 				writeCenterText("ROOMMATE: I drank it. I hope that's ok.", 32);
 				instructionText();
 				break;
 			case 6:
 				showCutScenes = false;
-				background(color4);
+				background(colorArray[3]);
 				writeCenterText("Do you want to watch some TV, or go to a bar?", 40);
 				instructionText();
 				break;

@@ -6,6 +6,7 @@ class SceneHelper {
 	color color2 = color(198, 255, 109);
 	color color3 = color(109, 198, 255);
 	color color4 = color(109, 255, 198);
+	color[] colorArray = {color(255, 109, 198), color(198, 255, 109), color(109, 198, 255), color(109, 255, 198)};
 	void writeCenterText(String textString, int fontSize) {
 		textSize(fontSize);
 		textAlign(CENTER, CENTER);

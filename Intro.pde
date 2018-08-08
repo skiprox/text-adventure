@@ -7,53 +7,53 @@ class Intro extends SceneHelper {
 	void update() {
 		switch (incrementer) {
 			case 0:
-				background(color1);
+				background(colorArray[incrementer%3]);
 				writeCenterText("2048", 80);
 				instructionText();
 				break;
 			case 1:
-				background(color2);
+				background(colorArray[incrementer%3]);
 				writeCenterText("August 18", 80);
 				instructionText();
 				break;
 			case 2:
-				background(color3);
+				background(colorArray[incrementer%3]);
 				writeCenterText("9:00 am", 80);
 				instructionText();
 				break;
 			case 3:
-				background(color1);
+				background(colorArray[incrementer%3]);
 				writeCenterText("You wake up", 80);
 				instructionText();
 				break;
 			case 4:
-				background(color2);
+				background(colorArray[incrementer%3]);
 				writeCenterText("You're hungover", 80);
 				instructionText();
 				break;
 			case 5:
-				background(color3);
+				background(colorArray[incrementer%3]);
 				writeCenterText("Your sex robot has left you", 80);
 				instructionText();
 				break;
 			case 6:
-				background(color1);
+				background(colorArray[incrementer%3]);
 				writeCenterText("Again.", 80);
 				instructionText();
 				break;
 			case 7:
-				background(color2);
+				background(colorArray[incrementer%3]);
 				writeCenterText("You're late for work", 80);
 				instructionText();
 				break;
 			case 8:
-				background(color3);
+				background(colorArray[incrementer%3]);
 				writeCenterText("Again.", 80);
 				instructionText();
 				break;
 			case 9:
 				showCutScenes = false;
-				background(color4);
+				background(colorArray[3]);
 				writeCenterText("Do you go to work, or call out sick?", 80);
 				instructionText();
 				break;
