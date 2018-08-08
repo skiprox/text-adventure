@@ -2,6 +2,7 @@ class Tv extends SceneHelper {
 	PImage tv1;
 	PImage tv2;
 	PImage food;
+	PImage war3;
 	int tvScreen1Incrementer = 0;
 	int tvScreen2Incrementer = 0;
 	int tvScreen3Incrementer = 0;
@@ -11,6 +12,7 @@ class Tv extends SceneHelper {
 		tv1 = loadImage("tv-1.png");
 		tv2 = loadImage("tv-2.png");
 		food = loadImage("lasagna.png");
+		war3 = loadImage("war-3.png");
 	}
 	// Basically the draw function
 	void update() {
@@ -32,21 +34,22 @@ class Tv extends SceneHelper {
 				break;
 			case 3:
 				showCutScenes = false;
-				background(random(100, 255), random(100, 255), random(100, 255), 100);
+				background(random(200, 255), random(200, 255), random(200, 255), 100);
 				image(tv1, 0, 0);
 				if (tvScreen1Incrementer < 140) {
 					writeCenterText("WAR", 120);
 				} else if (tvScreen1Incrementer < 280) {
 					writeCenterText("REALLY, THAT\'S IT", 80);
-				} else {
+				} else if (tvScreen1Incrementer < 420) {
 					writeCenterText("JUST WAR", 100);
+				} else {
+					writeCenterText("All Day Every Day,\non The War Channel", 40);
 				}
 				tvScreen1Incrementer++;
 				instructionText();
 				break;
 			case 4:
-				showCutScenes = false;
-				background(random(100, 255), random(100, 255), random(100, 255), 100);
+				background(random(200, 255), random(200, 255), random(200, 255), 100);
 				if (tvScreen2Incrementer < 140) {
 					image(tv2, 0, 0);
 					writeCenterText("SEX", 120);
@@ -60,15 +63,21 @@ class Tv extends SceneHelper {
 				} else {
 					image(food, 0, 0);
 					image(tv2, 0, 0);
-					writeCenterText("Every day,\nonly on HBO-CNN-USA Network", 40);
+					writeCenterText("Every day,\non HBO-CNN-USA Network", 40);
 				}
 				tvScreen2Incrementer++;
 				instructionText();
 				break;
 			case 5:
-				showCutScenes = false;
-				background(color3);
-				writeCenterText("TV Channel 3", 120);
+				background(random(200, 255), random(200, 255), random(200, 255), 100);
+				if (tvScreen3Incrementer < 140) {
+					image(war3, 0, 0);
+					writeCenterText("Children Crying", 100);
+				} else {
+					image(war3, 0, 0);
+					writeCenterText("Tuesdays,\nonly on Fox", 40);
+				}
+				tvScreen3Incrementer++;
 				instructionText();
 				break;
 			case 6:
@@ -94,7 +103,7 @@ class Tv extends SceneHelper {
 		} else if (!showCutScenes && codedKey == 89) { // Change the channel
 			incrementer++;
 		} else if (!showCutScenes && codedKey == 78) { // pass out
-			incrementer = 9;
+			incrementer = 6;
 		}
 	}
 	// Show the correct instruction text at the bottom of the screen
