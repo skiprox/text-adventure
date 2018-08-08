@@ -84,9 +84,6 @@ class Intro extends SceneHelper {
 		if (showCutScenes) {
 			writeBottomText("(press space to continue)", 20);
 		} else {
-			textSize(20);
-			textAlign(CENTER, BOTTOM);
-			fill(0);
 			writeBottomText("(press 'W' to go to work, or 'S' to call out sick)", 20);
 		}
 	}

@@ -23,41 +23,23 @@ class Tv extends SceneHelper {
 				break;
 			case 3:
 				showCutScenes = false;
-				background(color1);
-				writeCenterText("Do you want to change the channel?", 40);
+				background(random(100, 255), random(100, 255), random(100, 255), 100);
+				writeCenterText("WAR", 120);
 				instructionText();
 				break;
 			case 4:
-				showCutScenes = true;
-				background(random(100, 255), random(100, 255), random(100, 255), 100);
-				writeCenterText("WAR", 120);
+				showCutScenes = false;
+				background(color1);
+				writeCenterText("TV Channel 2", 120);
 				instructionText();
 				break;
 			case 5:
 				showCutScenes = false;
 				background(color3);
-				writeCenterText("Do you want to change the channel?", 40);
-				instructionText();
-				break;
-			case 6:
-				showCutScenes = true;
-				background(color1);
-				writeCenterText("TV Channel 2", 120);
-				instructionText();
-				break;
-			case 7:
-				showCutScenes = false;
-				background(color2);
-				writeCenterText("Do you want to change the channel?", 40);
-				instructionText();
-				break;
-			case 8:
-				showCutScenes = true;
-				background(color3);
 				writeCenterText("TV Channel 3", 120);
 				instructionText();
 				break;
-			case 9:
+			case 6:
 				showCutScenes = true;
 				background(color4);
 				writeCenterText("You pass out", 40);
@@ -67,7 +49,7 @@ class Tv extends SceneHelper {
 	}
 	// Check if this story line is complete
 	boolean isComplete() {
-		return incrementer >= 10;
+		return incrementer >= 7;
 	}
 	// Return the story line we should continue on next
 	String getNextStoryLine() {
@@ -75,7 +57,6 @@ class Tv extends SceneHelper {
 	}
 	// The key released listener
 	void keyReleased(int codedKey) {
-		println(codedKey);
 		if (showCutScenes && codedKey == 32) {
 			incrementer++;
 		} else if (!showCutScenes && codedKey == 89) { // Change the channel

@@ -91,7 +91,6 @@ class Work extends SceneHelper {
 	}
 	// The key released listener
 	void keyReleased(int codedKey) {
-		println(codedKey);
 		if (showCutScenes && codedKey == 32) {
 			incrementer++;
 		} else if (!showCutScenes && codedKey == 89) { // bomb

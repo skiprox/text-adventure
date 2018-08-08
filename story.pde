@@ -28,6 +28,7 @@ Work work;
 Home home;
 Bar bar;
 Tv tv;
+End end;
 
 void setup() {
 	size(800, 600);
@@ -40,7 +41,6 @@ void setup() {
 	musicEmdash = new SoundFile(this, "emdash.mp3");
 	musicBar = new SoundFile(this, "bar.mp3");
 	musicEnd = new SoundFile(this, "end.mp3");
-	musicEnd.stop();
 	musicIntro.loop();
 }
 
@@ -69,7 +69,10 @@ void draw() {
 				previousStoryLine = "work";
 				storyLine = work.getNextStoryLine();
 				musicWork.stop();
-				musicEnd.loop();
+				if (storyLine == "end") {
+					musicEnd.loop();
+					end = new End();
+				}
 			}
 			break;
 		case "home":
@@ -98,7 +101,10 @@ void draw() {
 				previousStoryLine = "bar";
 				storyLine = bar.getNextStoryLine();
 				musicBar.stop();
-				musicEnd.loop();
+				if (storyLine == "end") {
+					musicEnd.loop();
+					end = new End();
+				}
 			}
 			break;
 		case "tv":
@@ -108,7 +114,10 @@ void draw() {
 				previousStoryLine = "tv";
 				storyLine = tv.getNextStoryLine();
 				musicTv.stop();
-				musicEnd.loop();
+				if (storyLine == "end") {
+					musicEnd.loop();
+					end = new End();
+				}
 			}
 			break;
 		case "emdash":
@@ -123,9 +132,15 @@ void draw() {
 			}
 			break;
 		case "end":
-			background(255);
-			writeCenterText("the end", 120);
-			writeBottomText("(press space to restart)", 20);
+			if (!end.isComplete()) {
+				end.update();
+			} else {
+				previousStoryLine = "end";
+				storyLine = "intro";
+				intro = new Intro();
+				musicEnd.stop();
+				musicIntro.loop();
+			}
 			break;
 		default:
 			println("We are fucking done");
@@ -153,30 +168,7 @@ void keyReleased() {
 			tv.keyReleased(keyCode);
 			break;
 		case "end":
-			if (keyCode == 32) {
-				musicEnd.stop();
-				background(255);
-				storyLine = "intro";
-				intro = new Intro();
-				musicIntro.loop();
-			}
+			end.keyReleased(keyCode);
 			break;
 	}
-}
-
-void writeCenterText(String textString, int fontSize) {
-	textSize(fontSize);
-	textAlign(CENTER, CENTER);
-	fill(255);
-	text(textString, 21, 1, width - 40, height);
-	fill(0);
-	text(textString, 20, 0, width - 40, height);
-}
-void writeBottomText(String textString, int fontSize) {
-	textSize(fontSize);
-	textAlign(CENTER, BOTTOM);
-	fill(255);
-	text(textString, 21, -19, width - 40, height);
-	fill(0);
-	text(textString, 20, -20, width - 40, height);
 }
