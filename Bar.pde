@@ -113,7 +113,7 @@ class Bar extends SceneHelper {
 		if (showCutScenes) {
 			writeBottomText("(press space to continue)", 20);
 		} else {
-			writeBottomText("(press 'Y' to talk to stranger, or 'N' to continue drinking)", 20);
+			writeBottomText("(press 'Y' to talk to stranger, or 'N' to continue getting drunk)", 20);
 		}
 	}
 }
