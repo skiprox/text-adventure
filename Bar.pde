@@ -58,7 +58,7 @@ class Bar extends SceneHelper {
 				showCutScenes = true;
 				background(colorArray[incrementer%3]);
 				image(barPerson2, 0, 0);
-				writeCenterText("STRANGER: So, I hate landlards as much as the next person – but without them, where we would get houses?", 24);
+				writeCenterText("STRANGER: So, I hate landlards as much as the next person – but without them, where would we get houses?", 24);
 				instructionText();
 				break;
 			case 7:
